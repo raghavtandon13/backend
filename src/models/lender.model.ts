@@ -9,6 +9,10 @@ export interface LenderConfig {
     name: LenderName;
     baseUrl: string;
     apiKey: string;
+    partnerCode?: string;
+    passkey?: string;
+    clientId?: string;
+    clientSecret?: string;
     timeout: number;
     enabled: boolean;
     eligibilityRules: EligibilityRules;

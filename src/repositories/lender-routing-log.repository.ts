@@ -1,7 +1,7 @@
-import { Repository } from "typeorm";
+import type { Repository } from "typeorm";
+import type { LenderRoutingLog, RoutingDecision } from "@/models";
 import { AppDataSource } from "./data-source";
 import { LenderRoutingLogEntity } from "./entities/lender-routing-log.entity";
-import { RoutingDecision, type LenderRoutingLog } from "@/models";
 
 export class LenderRoutingLogRepository {
     private readonly repository: Repository<LenderRoutingLogEntity>;

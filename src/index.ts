@@ -4,7 +4,12 @@ import { errorHandler, notFoundHandler, securityMiddleware } from "./api/middlew
 import { createRoutes } from "./api/routes";
 import { config, validateConfig } from "./config";
 import { RetryJob } from "./jobs";
-import { initializeDatabase, LeadRepository, LenderResponseRepository, LenderRoutingLogRepository } from "./repositories";
+import {
+    initializeDatabase,
+    LeadRepository,
+    LenderResponseRepository,
+    LenderRoutingLogRepository,
+} from "./repositories";
 import { LeadProcessingService, RetryService } from "./services";
 import { logger } from "./utils/logger";
 
@@ -24,7 +29,11 @@ async function bootstrap(): Promise<void> {
         const routingLogRepository = new LenderRoutingLogRepository();
 
         // Initialize services
-        const leadProcessingService = new LeadProcessingService(leadRepository, lenderResponseRepository, routingLogRepository);
+        const leadProcessingService = new LeadProcessingService(
+            leadRepository,
+            lenderResponseRepository,
+            routingLogRepository,
+        );
         const retryService = new RetryService(leadRepository, lenderResponseRepository);
 
         // Initialize Express app

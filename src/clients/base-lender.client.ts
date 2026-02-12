@@ -14,7 +14,6 @@ export abstract class BaseLenderClient implements LenderClient {
             timeout: config.timeout,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${config.apiKey}`,
             },
         });
 

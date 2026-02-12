@@ -14,8 +14,10 @@ export const config = {
             name: LenderName.KARROFIN,
             baseUrl: process.env.KARROFIN_BASE_URL || "",
             apiKey: process.env.KARROFIN_API_KEY || "",
+            partnerCode: process.env.KARROFIN_PARTNER_CODE || "",
+            passkey: process.env.KARROFIN_PASSKEY || "",
             timeout: 30000,
-            enabled: Boolean(process.env.KARROFIN_API_KEY),
+            enabled: Boolean(process.env.KARROFIN_PARTNER_CODE && process.env.KARROFIN_PASSKEY),
             eligibilityRules: {
                 minIncome: 20000,
                 minAge: 21,
@@ -30,8 +32,10 @@ export const config = {
             name: LenderName.POCKETCREDIT,
             baseUrl: process.env.POCKETCREDIT_BASE_URL || "",
             apiKey: process.env.POCKETCREDIT_API_KEY || "",
+            clientId: process.env.POCKETCREDIT_CLIENT_ID || "",
+            clientSecret: process.env.POCKETCREDIT_CLIENT_SECRET || "",
             timeout: 30000,
-            enabled: Boolean(process.env.POCKETCREDIT_API_KEY),
+            enabled: Boolean(process.env.POCKETCREDIT_CLIENT_ID && process.env.POCKETCREDIT_CLIENT_SECRET),
             eligibilityRules: {
                 minIncome: 15000,
                 maxIncome: 100000,

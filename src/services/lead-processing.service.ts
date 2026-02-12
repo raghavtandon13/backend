@@ -195,8 +195,8 @@ export class LeadProcessingService {
                             employmentType: lead.employmentType,
                             state: lead.state,
                         },
-                    })
-                )
+                    }),
+                ),
             );
         }
 

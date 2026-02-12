@@ -1,10 +1,6 @@
 module.exports = {
     parser: "@typescript-eslint/parser",
-    parserOptions: {
-        project: "tsconfig.json",
-        tsconfigRootDir: __dirname,
-        sourceType: "module",
-    },
+    parserOptions: { project: "tsconfig.json", tsconfigRootDir: __dirname, sourceType: "module" },
     plugins: ["@typescript-eslint"],
     extends: [
         "eslint:recommended",
@@ -12,10 +8,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
     ],
     root: true,
-    env: {
-        node: true,
-        jest: true,
-    },
+    env: { node: true, jest: true },
     ignorePatterns: [".eslintrc.js", "dist/", "node_modules/"],
     rules: {
         "@typescript-eslint/interface-name-prefix": "off",
